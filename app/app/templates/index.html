@@ -1,0 +1,25 @@
+{% extends 'template.html' %}
+{% block content %}
+<ul>
+  <li><a href="/load">Load data</a> from official O'Reilly API.</li>
+  <li><a href="/get/all">List all</a> records in database, or use <strong>/get/all</strong>.</li>
+  <ul>
+      <li>Use <strong>/get/<i>id</i></strong> to return a single record by ID number.</li>
+      <li>To search by a specific attribute, use one of the following:</li>
+      <ul>
+        <li><strong>/get?title=<i>title</i></strong></li>
+        <li><strong>/get?author=<i>author</i></strong></li>
+        <li><strong>/get?isbn=<i>isbn</i></strong></li>
+        <li><strong>/get?description=<i>description</i></strong></li>
+      </ul>
+  </ul>
+  <li>Add a <a href="/add/form">new record</a> using a form.</li>
+  <ul>
+    <li>To add a work using <strong>/add</strong>, use parameters or json.</li>
+    <ul>
+      <li>Parameters take the form: <strong>/add?title=<i>title</i>&authors=<i>author(s)</i>&isbn=<i>isbn</i>&description=<i>description</i></strong></li>
+      <li>Json takes the form: <strong>{"authors": "<i>author(s)</i>", "title": "<i>title</i>", "isbn": "<i>isbn</i>", "description": "<i>description</i>"}</strong></li>
+    </ul>
+  </ul>
+</ul>
+{% endblock %}

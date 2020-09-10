@@ -1,0 +1,38 @@
+# Here is the format of entry lines in this file:
+#     pattern attr1 attr2 ...
+# 
+# Here are the meanings of the various attrs:
+#     text              No autodetection. Explicitly declaring to be text, so line endings are normalized to LF on checkin. Convert to OS native on checkout.
+#     text=auto         Autodetect if git thinks it's a text file, and if so, line endings are normalized to LF on checkin. Convert to OS native on checkout.
+#     text eol=crlf     Normalize on commit, and always checkout with CRLF (dos-style)
+#     text eol=lf       Normalize on commit, and always checkout with LF (unix-style)
+#     binary            No autodetection. Explicitly declare that no modifications are to be made.
+
+# This is a good default
+* text=auto
+
+# Explicitly declare some files to be text. Convert to OS native at checkout.
+*.py text
+*.groovy text
+*.txt text
+*.html text
+*.yml text
+*.yaml text
+*.json text
+*.sql text
+*.conf text
+*.cnf text
+*.cfg text
+*.md text
+*.markdown text
+*.xml text
+
+# Some files should always have unix-style line endings
+*.sh text eol=lf
+
+# Some files should be treated as binary, and no modifications ever made
+*.gz binary
+*.bz2 binary
+*.tgz binary
+*.png binary
+*.jpg binary

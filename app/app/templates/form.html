@@ -1,0 +1,35 @@
+{% extends 'template.html' %}
+{% block content %}
+<div class="row align-items-center justify-content-center">
+  <h2>Add Work to Database</h2>
+</div>
+<br>
+
+<form method="POST">
+
+  <label for="title">Title</label>
+  <div class="form-row">
+      <input class="form-control" type="text" placeholder="Title of Book" id="title" name="title">
+  </div>
+  <br>
+  <div class="form-row">
+      <label for="authors">Authors</label>
+      <input class="form-control" type="text" placeholder="Author Name(s)" id="authors" name="authors">
+  </div>
+  <br>
+  <div class="form-row">
+      <label for="isbn">ISBN</label>
+      <input class="form-control " type="integer" placeholder="ISBN" id="isbn" name="isbn">
+  </div>
+  <br>
+  <div class="form-row">
+      <label for="description">Description</label>
+      <input class="form-control" type="description" placeholder="Description" id="description" name="description">
+  </div>
+
+  <br>
+  <a href="/" style="float:left">Cancel</a>
+  <button type="submit" class="btn btn-primary" style="float:right">Submit</button>
+
+</form>
+{% endblock %}
