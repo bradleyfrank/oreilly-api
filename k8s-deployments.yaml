@@ -1,0 +1,51 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: oreilly-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: oreilly-api
+  template:
+    metadata:
+      labels:
+        name: oreilly-api
+    spec:
+      containers:
+        - name: oreilly-api
+          envFrom:
+            - secretRef:
+                name: oreilly-app-secrets
+          image: franklybrad/oreilly-api:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
+      restartPolicy: Always
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: postgres
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: postgres
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        name: postgres
+    spec:
+      containers:
+        - name: postgres
+          envFrom:
+            - secretRef:
+                name: oreilly-app-secrets
+          image: postgres:9.6
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 5432
+      restartPolicy: Always

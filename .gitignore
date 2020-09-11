@@ -1,3 +1,6 @@
+# Kubernetes secrets
+k8s-secrets.yaml
+
 # VSCode artifacts
 .vscode
 .devcontainer
