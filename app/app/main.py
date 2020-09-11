@@ -48,7 +48,7 @@ def load():
         entry.setdefault("description", "")
 
         title = entry["title"]
-        authors = ", ".join(entry["authors"])
+        authors = "; ".join(entry["authors"])
         isbn = entry["isbn"]
         description = entry["description"]
 
