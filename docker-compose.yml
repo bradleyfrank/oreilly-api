@@ -15,7 +15,7 @@ services:
       POSTGRES_USER: "${POSTGRES_USER}"
 
   app:
-    image: docker.pkg.github.com/bradleyfrank/oreilly-api/oreilly-api:latest
+    image: franklybrad/oreilly-api:latest
     container_name: oreilly-api
     restart: always
     networks:
