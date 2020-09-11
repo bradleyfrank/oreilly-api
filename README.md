@@ -8,6 +8,8 @@ Secrets and passwords don't _really_ matter in this instance. Generate a `.env` 
 
     sh env.sh
 
+*Note: there is a built-in 10 second delay on the Flask app to give PostgreSQL a chance to come up.*
+
 ### Docker
 
 To get started with Docker, run:
